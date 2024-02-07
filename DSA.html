@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Selection sort//
+        function Selection() {
+            let arr = [2, 4, 6, 3, 5, 1]
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        let temp = arr[j]
+                        arr[j] = arr[i]
+                        arr[i] = temp
+                    }
+                }
+            }
+            return arr
+        }
+        console.log(Selection());
+
+        // bubble sort//
+
+        function bubble() {
+            let arr1 = [45, 2, 56, 65, 23, 11, 4, 89, 10, 30, 1]
+            for (let i = 0; i < arr1.length; i++) {
+                for (let j = 0; j < arr1.length; j++) {
+                    if (arr1[j] > arr1[j + 1]) {
+                        let temp = arr1[j]
+                        arr1[j] = arr1[j + 1]
+                        arr1[j + 1] = temp
+                    }
+                }
+            }
+            return arr1
+        }
+        console.log(bubble());
+
+        // marge sort //
+
+        let array = [100, 200, 300, 400, 500, 600, 700];
+        console.log("origiinal array", array);
+
+        let middleIndex = Math.floor(array.length / 2);
+        let middleNumber = array[middleIndex];
+        let left = array.slice(0, middleIndex);
+        let LLeftarray = left.slice(0, Math.floor(left.length / 2))
+        let Rrightarray = left.slice(Math.floor(left.length / 2))
+        let right = array.slice(middleIndex + 1);
+        let RLeftarray = right.slice(0, Math.floor(right.length / 2))
+        let RRightarray = right.slice(Math.floor(right.length / 2))
+
+        console.log("Middle Number:", middleNumber);
+        console.log("left:", left);
+        console.log("LLeft array:", LLeftarray);
+        console.log("Rright array:", Rrightarray);
+
+        console.log("right:", right);
+        console.log("RLeftarray", RLeftarray);
+        console.log("RRightarray", RRightarray);
+
+        let mergeArray = []
+        for (let i = 0; i < LLeftarray.length; i++) {
+            mergeArray.push(LLeftarray[i]);
+        }
+        for (let i = 0; i < Rrightarray.length; i++) {
+            mergeArray.push(Rrightarray[i])
+        }
+        mergeArray.push(middleNumber)
+        for (let i = 0; i < RLeftarray.length; i++) {
+            mergeArray.push(RLeftarray[i])
+        }
+        for (let i = 0; i < RRightarray.length; i++) {
+            mergeArray.push(RRightarray[i])
+        }
+
+
+        console.log(mergeArray, ": Merge Array");
+
+        // when i want max number//
+
+        function Max() {
+            let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            let max = 0;
+            for (let i = 0; i < arr2.length; i++) {
+                let num = arr2[i]
+                if (num > max) {
+                    max = num
+                }
+            }
+            console.log(arr2, 'Find Max Number');
+            return max
+        }
+        console.log(Max(), 'max');
+
+      
+</script>
+
+</body>
+
+
+
+</html>
